@@ -1,0 +1,17 @@
+/home/spartan/FlutterProject/invasi/build/linux/x64/debug/bundle/invasi
+/home/spartan/FlutterProject/invasi/build/linux/x64/debug/bundle/data/icudtl.dat
+/home/spartan/FlutterProject/invasi/build/linux/x64/debug/bundle/lib/libflutter_linux_gtk.so
+/home/spartan/FlutterProject/invasi/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.json
+/home/spartan/FlutterProject/invasi/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin
+/home/spartan/FlutterProject/invasi/build/linux/x64/debug/bundle/data/flutter_assets/assets/shoes.png
+/home/spartan/FlutterProject/invasi/build/linux/x64/debug/bundle/data/flutter_assets/assets/suit-pants.png
+/home/spartan/FlutterProject/invasi/build/linux/x64/debug/bundle/data/flutter_assets/assets/suit.png
+/home/spartan/FlutterProject/invasi/build/linux/x64/debug/bundle/data/flutter_assets/assets/pp.png
+/home/spartan/FlutterProject/invasi/build/linux/x64/debug/bundle/data/flutter_assets/assets/pp.jpeg
+/home/spartan/FlutterProject/invasi/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES.Z
+/home/spartan/FlutterProject/invasi/build/linux/x64/debug/bundle/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+/home/spartan/FlutterProject/invasi/build/linux/x64/debug/bundle/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+/home/spartan/FlutterProject/invasi/build/linux/x64/debug/bundle/data/flutter_assets/version.json
+/home/spartan/FlutterProject/invasi/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.bin
+/home/spartan/FlutterProject/invasi/build/linux/x64/debug/bundle/data/flutter_assets/shaders/ink_sparkle.frag
+/home/spartan/FlutterProject/invasi/build/linux/x64/debug/bundle/data/flutter_assets/FontManifest.json
