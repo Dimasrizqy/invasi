@@ -65,6 +65,7 @@ flutter:
       - assets/shoes.png
       - assets/pp.png
       - assets/pp.jpeg
+      - assets/loading.gif
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

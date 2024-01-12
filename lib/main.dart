@@ -1,30 +1,77 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:invasi/bottom_navigation.dart';
-//import 'package:get/get.dart';
 import 'package:invasi/register.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-// import 'package:get/get.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    theme: ThemeData(useMaterial3: true),
+    home: const SplashScreen(),
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+  @override
+  _SplashScreenState createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    _loadSplashScreen();
+  }
+
+  _loadSplashScreen() async {
+    // Menunggu 2 detik sebelum pindah ke halaman berikutnya
+    Timer(const Duration(seconds: 3), () async {
+      final SharedPreferences prefs = await SharedPreferences.getInstance();
+      final bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
+      if (isLoggedIn) {
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const BottomNav()));
+      } else {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const MyHomePage()),
+        );
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(useMaterial3: true),
-      home: const MyHomePage(),
+    return Scaffold(
+      backgroundColor: Colors.white, // Ganti warna sesuai kebutuhan
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/loading.gif', // Sesuaikan dengan path gambar Anda
+              width: 150, // Sesuaikan dengan ukuran yang diinginkan
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              'Invasi', // Ganti dengan nama aplikasi Anda
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -37,66 +84,16 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    checkLoginStatus();
+    // checkLoginStatus();
   }
 
-  Future<void> checkLoginStatus() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    final bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
+  // Future<void> checkLoginStatus() async {
+  //   final SharedPreferences prefs = await SharedPreferences.getInstance();
+  //   final bool isLoggedIn = prefs.getBool('isLoggedIn') ?? false;
 
-    if (isLoggedIn) {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const BottomNav()));
-    }
-  }
-
-  // Future<void> login() async {
-  //   String username = usernameController.text;
-  //   String password = passwordController.text;
-  //   if (username.isNotEmpty && password.isNotEmpty) {
-  //     if (username == "1234" && password == "1234") {
-  //       final SharedPreferences prefs = await SharedPreferences.getInstance();
-  //       prefs.setBool('isLoggedIn', true);
-  //       Get.to(const Home());
-  //       // Navigator.pushReplacement(context,
-  //       //     MaterialPageRoute(builder: (context) => const BottomNav()));
-  //     } else {
-  //       showDialog(
-  //         context: context,
-  //         builder: (context) {
-  //           return AlertDialog(
-  //             title: const Text("Login Gagal"),
-  //             content: const Text("Username atau password tidak valid."),
-  //             actions: [
-  //               TextButton(
-  //                 onPressed: () {
-  //                   Navigator.of(context).pop();
-  //                 },
-  //                 child: const Text("Tutup"),
-  //               ),
-  //             ],
-  //           );
-  //         },
-  //       );
-  //     }
-  //   } else {
-  //     showDialog(
-  //       context: context,
-  //       builder: (context) {
-  //         return AlertDialog(
-  //           title: const Text("Login Gagal"),
-  //           content: const Text("Username atau password tidak boleh kosong."),
-  //           actions: [
-  //             TextButton(
-  //               onPressed: () {
-  //                 Navigator.of(context).pop();
-  //               },
-  //               child: const Text("Tutup"),
-  //             ),
-  //           ],
-  //         );
-  //       },
-  //     );
+  //   if (isLoggedIn) {
+  //     Navigator.pushReplacement(
+  //         context, MaterialPageRoute(builder: (context) => BottomNav()));
   //   }
   // }
 

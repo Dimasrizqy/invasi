@@ -37,6 +37,7 @@ class _QRScannerScreenState extends State<QRScannerScreen> {
                     borderWidth: 10,
                     cutOutSize: 300,
                   ),
+                  cameraFacing: CameraFacing.back,
                 )
               ],
             ),
