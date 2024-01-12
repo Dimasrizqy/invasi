@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:invasi/main.dart';
+import 'package:invasi/home_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ProfileScreen extends StatelessWidget {
